@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>DOM Play</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="assets/style.css"/>
+    </head>
+
+    <body>
+        <h1>DOM Play</h1>
+        <h2><u>Macbeth chapter 5</u></h2>
+        <div id="click-spans">
+            <p><span data-part = "macbeth">MACBETH: How now, you secret midnight hags! 
+              <br>What is it you do?</br>
+</span></p>
+            <p><span data-part = "all witches">ALL WITCHES: A deed without a name!</span></p>
+            <p><span data-part = "hectate">HECATE:Macbeth! Macbeth! Macbeth! beware Macduff;
+<br>Beware the thane of Fife. Dismiss me. Enough.</br>
+</span></p>
+            <p><span data-part = "bloody child">None of woman born
+<br>Shall harm Macbeth.</br></span></p>
+            <p><span data-part = "crowned chils">CROWNED CHILD: Macbeth shall never vanquish'd be until
+                                                                <br>Great Birnam wood to high Dunsinane hill</br>
+                                                                <br>Shall come against him.</br>
+</span></p>
+            <p><span data-part = "macbeth">MACBETH: Saw you the weird sisters? </span></p>
+            <p><span data-part = "lennox">LENNOX: No, my lord! Macduff has fled to England!</span></p>
+            <p><span data-part = "macbeth">MACBETH: To England!
+                                                    <br>The castle of Macduff I will surprise;</br>
+                                                    <br>Seize upon Fife; give to the edge o' the sword<br>
+                                                    <br>His wife, his babes, and all unfortunate souls</br>
+                                                    <br>That trace him in his line.</br></span></p>
+            <p><span data-part = "macduff">MACDUFF:<br>My children too?</br>
+                                                   <br>My wife kill'd too?</br>
+                                                   </span></p>
+            <p><span data-part = "ross">ROSS: I have said.</span></p>
+            <p><span data-part = "macduff">MACDUFF: <br>Bleed, bleed, poor country!</br>
+                                                       <br> Great tyranny!</br>
+                                                        <br>Not in the legions </br>
+                                                        <br>Of horrid hell can come a devil more damn'd </br>
+                                                        <br>In evils to top Macbeth.</br>
+                                                                            </span></p>
+            <p><span data-part = "malcolm">MALCOLM: <br>Be this the whetstone of your sword: let grief</br>
+              <br>Convert to anger; blunt not the heart, enrage it.</br>
+             <br>Come, go we to the king; our power is ready.</br></span></p>
+          
+        </div>
+
+        <footer id = "footer">
+            <p id = "content"><small>&copy; 2021 by <a href="contact.php">Contact (Cedar Thuotte)</a>, All Rights Reserved ~ <a href="https://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~ <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a></small></p>
+        </footer>
+
+        <script>
+            // spans is var so data is global
+            var spans = document.querySelectorAll("#click-spans span");
+
+            for(const mySpan of spans) {
+                mySpan.addEventListener("click", function(event) {
+                    highlightRole(mySpan.dataset.part);
+                });
+            }
+
+            function highlightRole(myPart) {
+                for(const mySpan of spans) {
+                    if(mySpan.dataset.part == myPart) {
+                        mySpan.style.backgroundColor = 'rgb(241, 193, 245)';
+                        mySpan.style.fontWeight = 'bold';
+                    }
+                    else {
+                        mySpan.style.backgroundColor = 'white';
+                        mySpan.style.fontWeight = 'normal';
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
+© 2021 GitHub, Inc.
